@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth" style="color-scheme: dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>JobForm Copilot — Your AI-Powered Recruitment Assistant</title>
+    <meta
+      name="description"
+      content="Automate your job application process with AI. JobForm Copilot intelligently fills out tedious recruitment forms using your custom profile and API key."
+    />
+    <link rel="icon" type="assets/png" href="assets/jobform-icon1.png" />
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              darkBg: "#030712",
+              darkCard: "#111827",
+              indigoPrimary: "#4F46E5",
+              indigoHover: "#6366F1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Force colors to prevent browser extensions (like Dark Reader) from messing them up */
+      html,
+      body {
+        background-color: #030712 !important;
+        background-image: radial-gradient(
+          circle at top center,
+          #101b36 0%,
+          #030712 70%
+        ) !important;
+        background-attachment: fixed !important;
+        background-repeat: no-repeat !important;
+        color: #f3f4f6 !important;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body class="antialiased selection:bg-indigoPrimary selection:text-white">
+    <!-- Navbar -->
+    <nav
+      class="fixed w-full z-50 bg-[#030712]/80 backdrop-blur-md border-b border-gray-800"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <div class="flex items-center gap-3">
+            <img
+              src="./assets/jobform-icon1.png"
+              alt="JobForm Copilot Logo"
+              class="w-8 h-8 object-contain rounded"
+            />
+            <span class="font-semibold text-lg hidden sm:block text-white"
+              >JobForm Copilot</span
+            >
+          </div>
+          <!-- Links -->
+          <div class="flex gap-12">
+            <a
+              href="#how-it-works"
+              class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >How It Works</a
+            >
+            <a
+              href="#privacy"
+              class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Section 1: Hero & Features -->
+      <section
+        class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center"
+      >
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigoPrimary/10 text-indigoPrimary border border-indigoPrimary/20 text-sm font-medium mb-8"
+        >
+          <span class="flex h-2 w-2 relative">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigoPrimary opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2 w-2 bg-indigoPrimary"
+            ></span>
+          </span>
+          Now available on Chrome Web Store
+        </div>
+        <div class="inline-flex flex-col items-center justify-center mb-6">
+          <div
+            class="text-indigo-400 font-bold tracking-widest uppercase text-sm mb-4"
+          >
+            JobForm Copilot
+          </div>
+          <h1
+            class="text-5xl md:text-7xl font-black tracking-tighter text-white leading-none"
+          >
+            Your AI-Powered <br class="hidden md:block" />
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500"
+              >Recruitment Assistant</span
+            >
+          </h1>
+        </div>
+
+        <p
+          class="text-lg md:text-xl text-indigo-100/70 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+        >
+          Stop wasting time retyping the same information on every career site.
+          Let your personal AI autofill complex job application forms instantly,
+          locally, and securely.
+        </p>
+
+        <div class="flex justify-center gap-4 mb-8">
+          <a
+            href="https://chrome.google.com/webstore"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-white bg-indigoPrimary hover:bg-indigoHover rounded-xl transition-all shadow-lg shadow-indigoPrimary/25 hover:shadow-indigoPrimary/40 transform hover:-translate-y-0.5"
+          >
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"
+              />
+            </svg>
+            Install Extension
+          </a>
+        </div>
+
+        <!-- Demo Video Presentation -->
+        <div class="mt-16 relative max-w-3xl mx-auto">
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-2xl/60 bg-[#050505]"
+          >
+            <img
+              src="./assets/jobcopilot-video.webp"
+              alt="JobForm Copilot Live Demo"
+              class="w-full h-auto object-cover rounded-xl select-none"
+              draggable="false"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: How It Works -->
+      <section id="how-it-works" class="py-24 border-y border-gray-800/50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">How It Works</h2>
+            <p class="text-gray-400 text-lg">
+              Set it up once, autofill everywhere.
+            </p>
+          </div>
+
+          <!-- Plain layout instead of cards -->
+          <div
+            class="grid md:grid-cols-3 gap-12 text-center md:text-left relative"
+          >
+            <!-- Step 1 -->
+            <div>
+              <div
+                class="w-12 h-12 rounded-full bg-indigoPrimary/10 text-indigoPrimary flex items-center justify-center font-bold text-xl mb-6 mx-auto md:mx-0"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Install & Open</h3>
+              <p class="text-gray-400 leading-relaxed">
+                Add the extension to Chrome from the Web Store. Click the icon
+                to open the JobForm Copilot popup on any job board.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div>
+              <div
+                class="w-12 h-12 rounded-full bg-indigoPrimary/10 text-indigoPrimary flex items-center justify-center font-bold text-xl mb-6 mx-auto md:mx-0"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                Configure AI (BYOK)
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Bring Your Own Key! Go to Settings and securely paste your
+                personal API key (Gemini, OpenAI, Groq, or Claude).
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div>
+              <div
+                class="w-12 h-12 rounded-full bg-indigoPrimary/10 text-indigoPrimary flex items-center justify-center font-bold text-xl mb-6 mx-auto md:mx-0"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                One-Click Autofill
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Navigate to an application form, click the "Auto Fill" button,
+                and watch as your personal AI assistant accurately fills every
+                field.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Key Features -->
+      <section id="features" class="py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">
+              Why JobForm Copilot?
+            </h2>
+            <p class="text-gray-400 text-lg">
+              Designed for speed, privacy, and flexibility.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Feature 1 -->
+            <div
+              class="p-8 rounded-2xl transition-colors"
+            >
+              <div class="text-3xl mb-4">📄</div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                PDF to AI Profile
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Upload your CV directly. Our AI parses it and structures it into
+                your local Candidate Profile instantly. No manual typing
+                required.
+              </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+              class="p-8 rounded-2xl transition-colors"
+            >
+              <div class="text-3xl mb-4">🔑</div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                Bring Your Own Key (BYOK)
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Total flexibility. Choose the best model for your needs: OpenAI,
+                Gemini, Groq, or Claude. You're in complete control of your AI
+                API.
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+              class="p-8 rounded-2xl transition-colors"
+            >
+              <div class="text-3xl mb-4">🛡️</div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                100% Local & Private
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                Your data never hits our servers. Your profile and API keys are
+                stored locally in your browser, ensuring maximum privacy.
+              </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+              class="p-8 rounded-2xl transition-colors"
+            >
+              <div class="text-3xl mb-4">🌍</div>
+              <h3 class="text-xl font-bold text-white mb-3">
+                Smart Context & Multi-Language
+              </h3>
+              <p class="text-gray-400 leading-relaxed">
+                The AI adapts to the form's language and context. It formats
+                cover letters and answers specifically tailored to the job
+                description.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Privacy Policy -->
+      <section
+        id="privacy"
+        class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto"
+      >
+        <div class="flex items-center gap-3 mb-8">
+          <svg
+            class="w-8 h-8 text-indigoPrimary"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+            ></path>
+          </svg>
+          <h2 class="text-3xl font-bold text-white">Privacy Policy</h2>
+        </div>
+
+        <p class="text-gray-400 mb-8 leading-relaxed text-lg">
+          Last Updated: June 17, 2026<br />
+          At JobForm Copilot, your privacy and data security are our absolute
+          highest priorities. Since our extension is a client-side tool, we
+          operate with a strict "Local First" approach.
+        </p>
+
+        <div class="space-y-8 text-gray-300">
+          <p class="leading-relaxed text-lg">
+            <strong class="text-white block mb-2">1. Local Data Storage</strong>
+            JobForm Copilot does not collect, track, or store your personal data
+            on any external servers. All information you provide (such as your
+            resume, work experience, and profile details) is saved strictly
+            within your browser's local storage
+            (<code>chrome.storage.local</code>).
+          </p>
+
+          <p class="leading-relaxed text-lg">
+            <strong class="text-white block mb-2"
+              >2. Secure AI Processing</strong
+            >
+            To autofill forms, the extension sends your locally stored profile
+            data and the specific form context directly to your chosen AI
+            provider (e.g., Google Gemini, OpenAI, Groq) via their official
+            APIs. We do not intermediate, intercept, or log any of these
+            requests.
+          </p>
+
+          <p class="leading-relaxed text-lg">
+            <strong class="text-white block mb-2"
+              >3. API Key Security (BYOK)</strong
+            >
+            The application operates on a "Bring Your Own Key" (BYOK) model.
+            Your API keys are saved locally and are used exclusively to
+            communicate directly with the respective AI providers from your
+            machine.
+          </p>
+
+          <p class="leading-relaxed text-lg">
+            <strong class="text-white block mb-2"
+              >4. Third-Party Services</strong
+            >
+            The AI providers process your data according to their own privacy
+            policies. Please review the policies of Google, OpenAI, Groq, or
+            Anthropic before entering their API keys into the extension.
+          </p>
+
+          <p class="leading-relaxed text-lg">
+            <strong class="text-white block mb-2">5. User Consent</strong>
+            By installing and using JobForm Copilot, you consent to the local
+            storage of your data and its direct transmission to the AI models
+            you authorize via API keys.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-[#030712] text-center py-8">
+      <p class="text-sm text-gray-500">
+        &copy; 2026 JobForm Copilot. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
