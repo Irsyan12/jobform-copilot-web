@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>JobForm Copilot - AI-Powered Recruitment Assistant</title>
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<link rel="icon" href="/logo.png" />
+		<script>
+			import "../styles/global.css";
+			// Fix for Tailwind needing 'dark' class on <html>
+			if (typeof localStorage !== "undefined") {
+				if (
+					(!localStorage.getItem("theme") &&
+						window.matchMedia("(prefers-color-scheme: dark)").matches) ||
+					localStorage.getItem("theme") === "dark"
+				) {
+					document.documentElement.classList.add("dark");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
